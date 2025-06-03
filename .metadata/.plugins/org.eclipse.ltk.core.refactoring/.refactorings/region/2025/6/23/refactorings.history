@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;region/src/main/webapp/vews&apos; to &apos;views&apos;" description="Rename resource &apos;vews&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/webapp/vews" name="views" stamp="1748981405210" updateReferences="true"/>
+</session>
