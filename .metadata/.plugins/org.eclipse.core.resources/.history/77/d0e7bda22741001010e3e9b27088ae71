@@ -1,0 +1,37 @@
+package domain;
+/**
+* Класс данных о районах
+*/
+public class District {
+// Идентификатор района
+private Long id;
+// Наименование района
+private String namedistrict;
+public District() {
+}
+public District(String namedistrict) {
+this.namedistrict = namedistrict;
+}
+public District(Long id, String namedistrict) {
+this.id = id;
+this.namedistrict = namedistrict;
+}
+public Long getId() {
+return id;
+}
+public void setId(Long id) {
+
+this.id = id;
+}
+public String getNameDistrict() {
+return namedistrict;
+}
+public void setnamedistrict(String namedistrict) {
+this.namedistrict = namedistrict;
+}
+@Override
+public String toString() {
+return "District {" + "Id = " + id + ", namedistrict = " + namedistrict
++ "}";
+}
+}

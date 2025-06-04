@@ -58,3 +58,13 @@
 0:0:0:0:0:0:0:1 - - [04/Jun/2025:01:21:54 +0300] "GET /region/HelloRoleServlet HTTP/1.1" 200 35
 0:0:0:0:0:0:0:1 - - [04/Jun/2025:01:22:02 +0300] "GET /region/HelloRegionServlet HTTP/1.1" 200 37
 0:0:0:0:0:0:0:1 - - [04/Jun/2025:01:22:39 +0300] "GET /region/HelloDistrictServlet HTTP/1.1" 200 39
+127.0.0.1 - - [04/Jun/2025:11:37:53 +0300] "GET / HTTP/1.1" 404 772
+0:0:0:0:0:0:0:1 - - [04/Jun/2025:11:37:54 +0300] "GET /region/ HTTP/1.1" 200 2548
+0:0:0:0:0:0:0:1 - - [04/Jun/2025:11:37:54 +0300] "GET /region/css/bootstrap.min.css HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [04/Jun/2025:11:37:54 +0300] "GET /region/images/main.png HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [04/Jun/2025:11:37:54 +0300] "GET /region/css/style.css HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [04/Jun/2025:11:37:54 +0300] "GET /region/js/bootstrap.bundle.min.js HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [04/Jun/2025:11:37:54 +0300] "GET /region/js/jquery-3.6.4.js HTTP/1.1" 404 805
+0:0:0:0:0:0:0:1 - - [04/Jun/2025:11:37:54 +0300] "GET /region/images/region.png HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [04/Jun/2025:11:37:54 +0300] "GET /favicon.ico HTTP/1.1" 404 783
+0:0:0:0:0:0:0:1 - - [04/Jun/2025:11:38:11 +0300] "GET /region/HelloRegionServlet HTTP/1.1" 200 37

@@ -2,9 +2,27 @@
 <section name="Workbench">
 	<item key="hasShownOverlayPopupBefore" value="true"/>
 	<section name="java.lang.Class">
-		<item key="replaceBarOpen" value="false"/>
+		<item key="replaceBarOpen" value="true"/>
 		<list key="findhistory">
+			<item value="getNameDistrict"/>
+			<item value="role"/>
+			<item value="Role"/>
+			<item value="email"/>
+			<item value="phone"/>
+			<item value="lastName"/>
+			<item value="firstName"/>
+			<item value="Person"/>
+			<item value="namerole"/>
 			<item value=".bg-primary"/>
+		</list>
+		<list key="replacehistory">
+			<item value="District"/>
+			<item value="regionHead"/>
+			<item value="regionCity"/>
+			<item value="regionArea"/>
+			<item value="regionName"/>
+			<item value="Region"/>
+			<item value="namedistrict"/>
 		</list>
 	</section>
 </section>

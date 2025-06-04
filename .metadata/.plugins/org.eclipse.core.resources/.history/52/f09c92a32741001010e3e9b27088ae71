@@ -1,0 +1,129 @@
+package domain;
+/**
+* Класс для данных области
+*/
+public class Region {
+// Идентификатор сотрудника
+ private Long id;
+
+ // название области
+ private String regionName;
+
+ // площадь
+ private String regionArea;
+
+ // административный центр
+ private String regionCity;
+
+ // глава
+ private String regionHead;
+
+ // Внешний ключ -ссылка на сущность District
+ private Long idDistrict;
+
+ // Навигационное свойства - ссылка на район
+ private District district;
+ public Region() {
+}
+
+ public Region(String regionName, String regionArea, String regionCity,
+ String regionHead, District district) {
+ this.regionName = regionName;
+ this.regionArea = regionArea;
+ this.regionHead = regionHead;
+ this.regionCity = regionCity;
+ this.district = district;
+ }
+
+ public Region(String regionName, String regionArea, String regionCity,
+ String regionHead, Long idDistrict, District district) {
+ this.regionName = regionName;
+ this.regionArea = regionArea;
+ this.regionHead = regionHead;
+ this.regionCity = regionCity;
+ this.district = district;
+ this.idDistrict = idDistrict;
+ }
+
+ public Region(Long id, String regionName, String regionArea, String
+regionCity,
+ String regionHead, Long idDistrict, District district) {
+ this.id = id;
+ this.regionName = regionName;
+ this.regionArea = regionArea;
+ this.regionHead = regionHead;
+ this.regionCity = regionCity;
+ this.district = district;
+ this.idDistrict = idDistrict;
+ }
+
+
+public String getregionName() {
+return regionName;
+}
+public void setregionName(String regionName) {
+this.regionName = regionName;
+}
+
+public String getregionArea() {
+return regionArea;
+}
+public void setregionArea(String regionArea) {
+this.regionArea = regionArea;
+}
+
+public String getregionCity() {
+return regionCity;
+}
+
+public void setregionCity(String regionCity) {
+this.regionCity = regionCity;
+}
+
+public District district () {
+return district;
+}
+
+public Long getId() {
+return id;
+}
+
+public void setId(Long id) {
+this.id = id;
+}
+
+public String getregionHead() {
+return regionHead;
+}
+
+public void setregionHead(String regionHead) {
+this.regionHead = regionHead;
+}
+
+public String getDistrict() {
+return district.getNameDistrict();
+}
+
+public void setDistrict(District district) {
+this.district = district;
+}
+
+public Long getIdDistrict() {
+return idDistrict;
+}
+
+public void setIdDistrict(Long idDistrict) {
+this.idDistrict = idDistrict;
+}
+
+@Override
+public String toString() {
+return "District {" + "Id = " + id +
+", regionName = " + regionName +
+", regionArea = " + regionArea +
+", regionCity = " + regionCity +
+", regionHead = " + regionHead +
+", nameDistrict = " + getDistrict() +
+"}";
+}
+}
