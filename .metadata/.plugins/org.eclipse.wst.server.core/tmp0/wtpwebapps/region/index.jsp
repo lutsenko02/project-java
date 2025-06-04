@@ -18,10 +18,8 @@
 <div class="list-group text-center py-3 px-3">
 <h2>Функции системы</h2>
 <ul class="list-group list-group-flush">
-<li class="list-group-item list-group-itemprimary"><a href="#">Название</a>
-<li class="list-group-item list-group-iteminfo"><a href="#">Площадь</a>
-<li class="list-group-item list-group-iteminfo"><a href="#">Административный центр</a>
-<li class="list-group-item list-group-iteminfo"><a href="#">Глава</a>
+<li class="list-group-item list-group-itemprimary"><a href="/region/region">Области</a>
+<li class="list-group-item list-group-iteminfo"><a href="/region/district">Районы</a>
 </ul>
  </div>
 <br><br>

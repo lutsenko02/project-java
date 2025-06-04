@@ -33,7 +33,7 @@ height="80" >
  <h2>Области</h2>
  </div>
 </nav>
-<button type="button" class="btn btn-primary" data-toggle="popover"
+<button type="button" class="btn btn-primary main" data-toggle="popover"
 title="Сообщение" data-content="Ура, Bootstrap 5 работает">
 Поднеси ко мне курсор
 </button>

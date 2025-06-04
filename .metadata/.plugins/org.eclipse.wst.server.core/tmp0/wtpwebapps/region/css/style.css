@@ -6,7 +6,6 @@
 }
 
 .navbar {
-	margin-bottom: 50px;
 	background-color: #a6caff !important;
 }
 
@@ -24,4 +23,8 @@
 .btn-primary:hover {
 	background-color: #6faaff;
 	border-color: unset;
+}
+
+.btn-primary.main {
+	margin: 50px 0 50px 0;
 }

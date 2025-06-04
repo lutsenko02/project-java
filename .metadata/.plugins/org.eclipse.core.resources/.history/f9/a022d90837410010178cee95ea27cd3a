@@ -1,0 +1,27 @@
+@charset "UTF-8";
+
+.navbar-light .navbar-brand img {
+    width: 50px;
+    height: 50px;
+}
+
+.navbar {
+	margin-bottom: 50px;
+	background-color: #a6caff !important;
+}
+
+#top-image {
+    width: 20px;
+    height: 20px;
+    margin: 10px 10px 10px 0px;
+}
+
+.btn-primary {
+	background-color: #a6caff;
+	border-color: unset;
+}
+
+.btn-primary:hover {
+	background-color: #6faaff;
+	border-color: unset;
+}
