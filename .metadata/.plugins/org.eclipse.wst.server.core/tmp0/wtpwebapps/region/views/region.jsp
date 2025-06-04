@@ -3,24 +3,7 @@ pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="jakarta.tags.core"%>
 <%@ page import="domain.District"%>
 <%@ page import="domain.Region"%>
-<%
-District d1 = new District(1l, "Александровка", "45", "1990", 10000);
-District d2 = new District(2l, "Аксайский район", "100", "1890", 25000);
-District d3= new District(3l, "Азовский район", "500", "1700", 500000);
-District d4 = new District(4l, "Ленинский район", "10", "1800", 150000);
-District[] districts = new District[]{d1, d2, d3, d4};
-pageContext.setAttribute("districts", districts);
 
-
-Region r1 = new Region(1l, "Ростовская область", "354000", "Ртосв-на-Дону", "Слюсарь Юрий Борисович", d1);
-Region r2 = new Region(2l, "Ростовская область", "354000", "Ртосв-на-Дону", "Слюсарь Юрий Борисович", d2);
-Region r3 = new Region(3l, "Ростовская область", "354000", "Ртосв-на-Дону", "Слюсарь Юрий Борисович", d3);
-Region r4 = new Region(4l, "Ростовская область", "354000", "Ртосв-на-Дону", "Слюсарь Юрий Борисович", d4);
-
-Region[] regions = new Region[]{r1, r2, r3, r4};
-
-pageContext.setAttribute("regions", regions);
-%>
 <!DOCTYPE html>
 <html>
 <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">

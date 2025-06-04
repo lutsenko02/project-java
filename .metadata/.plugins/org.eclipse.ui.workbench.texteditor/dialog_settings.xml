@@ -4,6 +4,7 @@
 	<section name="java.lang.Class">
 		<item key="replaceBarOpen" value="true"/>
 		<list key="findhistory">
+			<item value="DAOException"/>
 			<item value="getNameDistrict"/>
 			<item value="Person"/>
 			<item value=".navbar"/>
@@ -18,6 +19,7 @@
 			<item value=".bg-primary"/>
 		</list>
 		<list key="replacehistory">
+			<item value="Exception"/>
 			<item value="Region"/>
 			<item value="District"/>
 			<item value="regionHead"/>
