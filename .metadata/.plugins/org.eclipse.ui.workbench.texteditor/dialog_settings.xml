@@ -4,12 +4,13 @@
 	<section name="java.lang.Class">
 		<item key="replaceBarOpen" value="true"/>
 		<list key="findhistory">
+			<item value="role"/>
+			<item value="roleEdit"/>
 			<item value="DAOException"/>
 			<item value="getNameDistrict"/>
 			<item value="Person"/>
 			<item value=".navbar"/>
 			<item value="RequestDispatcher"/>
-			<item value="role"/>
 			<item value="Role"/>
 			<item value="email"/>
 			<item value="phone"/>

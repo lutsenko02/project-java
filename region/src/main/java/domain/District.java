@@ -29,6 +29,13 @@ public District(Long id, String namedistrict, String districtArea, String distri
 	this.districNumberOfPeople = districNumberOfPeople;
 }
 
+public District(String namedistrict, String districtArea, String districYear, int districNumberOfPeople) {
+	this.namedistrict = namedistrict;
+	this.districtArea = districtArea;
+	this.districYear = districYear;
+	this.districNumberOfPeople = districNumberOfPeople;
+}
+
 public Long getId() {
 return id;
 }

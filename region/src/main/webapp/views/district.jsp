@@ -39,19 +39,24 @@
 	 <th scope="col">Удалить</th>
  </thead>
  <tbody>
- <c:forEach var="District" items="${districts}">
+ <c:forEach var="district" items="${districts}">
  <tr>
- <td>${District.getId()}</td>
- <td>${District.getNameDistrict()}</td>
- <td>${District.getDistrictArea()}</td>
- <td>${District.getDistrictYear()}</td>
- <td>${District.getDistrictNumberOfPeople()}</td>
- <td width="20"><a href="#" role="button"
+ <td>${district.getId()}</td>
+ <td>${district.getNameDistrict()}</td>
+ <td>${district.getDistrictArea()}</td>
+ <td>${district.getDistrictYear()}</td>
+ <td>${district.getDistrictNumberOfPeople()}</td>
+ 
+ <td width="20"><a href='<c:url value="/editdistrict?id=${district.getId()}"/>' role="button"
  class="btn btn-outline-primary">
  <img alt="Редактировать"
  src="images/icon-edit.png"></a></td>
- <td width="20"><a href="#" role="button"
- class="btn btn-outline-primary">
+ 
+ <td width="20"><a href="<c:url value="/deletedistrict?id=${district.getId()}" />" role="button"
+ class="btn btn-outline-primary"
+ onclick="return confirm('Удалить район с кодом:'+
+${district.getId()}+'?')"
+ >
  <img alt="Удалить"
  src="images/icon-delete.png"></a></td>
  </tr>
