@@ -4,29 +4,32 @@ package domain;
 */
 public class Region {
 // Идентификатор сотрудника
- private Long id;
+private Long id;
  // название области
- private String regionName;
+private String regionName;
  // площадь
- private String regionArea;
+private String regionArea;
  // административный центр
- private String regionCity;
+private String regionCity;
  // глава
- private String regionHead;
+private String regionHead;
  
  // Навигационное свойства - ссылка на район
- private District district;
-	 public Region() {
+private District district;
+
+private Long idDi;
+
+public Region() {
 }
 
  public Region(Long id, String regionName, String regionArea, String regionCity,
- String regionHead, District district) {
-	 this.id = id;
+ String regionHead, Long idDi) {
+	 this.id 		 = id;
 	 this.regionName = regionName;
 	 this.regionArea = regionArea;
 	 this.regionHead = regionHead;
 	 this.regionCity = regionCity;
-	 this.district = district;
+	 this.idDi 		 = idDi;
  }
 
  public Region(String regionName, String regionArea, String regionCity,
@@ -76,6 +79,10 @@ public String getregionHead() {
 return regionHead;
 }
 
+public Long getregionIdDi() {
+return idDi;
+}
+
 public void setregionHead(String regionHead) {
 this.regionHead = regionHead;
 }
@@ -84,6 +91,9 @@ public void setDistrict(District district) {
 	this.district = district;
 }
 
+public void setIdDi(Long idDi) {
+	this.idDi = idDi;
+}
 
 
 @Override

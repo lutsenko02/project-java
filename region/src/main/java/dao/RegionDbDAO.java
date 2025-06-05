@@ -45,13 +45,7 @@ public class RegionDbDAO implements RepositoryDAO<Region> {
             pst.setString(2, region.getregionArea());
             pst.setString(3, region.getregionCity());
             pst.setString(4, region.getregionHead());
-            
-            District district = region.getDistrict();
-            if (district != null && district.getId() != null) {
-                pst.setLong(5, district.getId());
-            } else {
-                pst.setNull(5, Types.BIGINT);
-            }
+            pst.setLong(5, region.getregionIdDi());
             
             pst.executeUpdate();
             

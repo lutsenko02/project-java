@@ -1,4 +1,3 @@
-/config/
-/DAO/
-/dao/
 /controller/
+/dao/
+/domain/

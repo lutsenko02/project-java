@@ -1,24 +1,24 @@
 package controller;
+
+import domain.District;
+import domain.Region;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import dao.RegionDbDAO;
+import dao.ConnectionProperty;
+import dao.DistrictDbDAO;
+
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.List;
 
-import domain.District;
-import domain.Region;
-import dao.RegionDbDAO;
-import dao.DistrictDbDAO;
-import dao.ConnectionProperty;
-
-
 /**
-* Servlet implementation class RoleServlet_
-*/
+ * Servlet implementation class RegionServlet
+ */
 @WebServlet("/region")
 public class RegionServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
@@ -29,76 +29,85 @@ public class RegionServlet extends HttpServlet {
         prop = new ConnectionProperty();
     }
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+	    protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html");
-        String userPath;
-        List<Region> regions;
-        List<District> districts;
-        
-        RegionDbDAO regionDao = new RegionDbDAO();
-        DistrictDbDAO districtDao = new DistrictDbDAO();
-        
-        try {
-            regions = regionDao.findAll();
-            districts = districtDao.findAll();
-            
-            // Устанавливаем полные объекты District для каждого региона
-            for (Region region : regions) {
-                if (region.getDistrict() != null && region.getDistrict().getId() != null) {
-                    District district = districtDao.findById(region.getDistrict().getId());
-                    region.setDistrict(district);
-                }
-            }
-            
-            request.setAttribute("regions", regions);
-            request.setAttribute("districts", districts);
-            
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        
-        userPath = request.getServletPath();
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/views/region.jsp");
-        dispatcher.forward(request, response);
-    }
+	        response.setContentType("text/html");
+	        String userPath;
+	        List<Region> regions;
+	        List<District> districts;
+
+	        RegionDbDAO daoRegion = new RegionDbDAO();
+	        DistrictDbDAO daoDistrict = new DistrictDbDAO();
+	
+	        try {
+	        	regions = daoRegion.findAll();
+	            request.setAttribute("regions", regions);
+	
+	        } catch (Exception e) {
+	            e.printStackTrace();
+	        }
+	        
+	        try {
+	        	districts = daoDistrict.findAll();
+	            request.setAttribute("districts", districts);
+	
+	        } catch (Exception e) {
+	            e.printStackTrace();
+	        }
+	
+	        userPath = request.getServletPath();
+	        
+	        if ("/region".equals(userPath)) {
+	            request.getRequestDispatcher("/views/region.jsp").forward(request, response);
+	        }
+	    }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        RegionDbDAO dao = new RegionDbDAO();
-        DistrictDbDAO districtDao = new DistrictDbDAO();
-        
+        RegionDbDAO daoRegion = new RegionDbDAO();
+
         try {
-            String regionName = request.getParameter("regionName");
-            String regionArea = request.getParameter("regionArea");
-            String regionCity = request.getParameter("regionCity");
-            String regionHead = request.getParameter("regionHead");
-            String districtIdStr = request.getParameter("districtId");
-            String idStr = request.getParameter("id");
+            String name = request.getParameter("nameRegion");
+            String area = request.getParameter("areaRegion");
+            String city = request.getParameter("cityRegion");
+            String head = request.getParameter("headRegion");
+            String district = request.getParameter("district");
+            String id = request.getParameter("id");
             
-            Long id = null;
-            if (idStr != null && !idStr.isEmpty()) {
-                id = Long.parseLong(idStr);
-            }
+            int index1 = district.indexOf('=');
+            int index2 = district.indexOf(",");
+            String d1 = district.substring(index1+1, index2);
+            Long idDi = Long.parseLong(d1.trim());
             
-            District district = null;
-            if (districtIdStr != null && !districtIdStr.isEmpty()) {
-                Long districtId = Long.parseLong(districtIdStr);
-                district = districtDao.findById(districtId);
-            }
-            
-            Region region = new Region(id, regionName, regionArea, regionCity, regionHead, district);
-            
-            if (id == null) {
-                dao.insert(region);
+            Long idID = null;
+	        if (id != null && !id.isEmpty()) {
+	            String digitsOnlyId = id.replaceAll("\\D+", "");
+	            if (!digitsOnlyId.isEmpty()) {
+	            	idID = Long.parseLong(digitsOnlyId);
+	            }
+	        }
+	        
+            Region newRegion = new Region(idID, name, area, city, head, idDi);
+
+            String successMessage;
+            if (id != null) {
+                // Обновляем существующий район
+            	daoRegion.update(newRegion);
+                successMessage = "Область успешно добавлена";
             } else {
-                dao.update(region);
+                // Создаем новый район
+                Long index = daoRegion.insert(newRegion);
+                successMessage = "Область успешно добавлена. ID: " + index;
             }
-            
+
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/views/region.jsp");
+			dispatcher.include(request, response);
+
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace();            
+            request.setAttribute("error", "Ошибка при обработке области: " + e.getMessage());
         }
         
-        response.sendRedirect(request.getContextPath() + "/region");
+		doGet(request, response);
     }
 }

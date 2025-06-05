@@ -60,22 +60,54 @@
  </table>
  </div>
  <div class="col-4 border px-4">
- <form method="POST" action="">
+ 
+ 
+ 
+ <form method="POST" action="district">
  <h3>Новый район</h3>
- <div class="mb-3">
- <br> 
- <label for="inputRole" class="col-sm-3 col-form-label">Район</label>
- <div class="col-sm-6">
- <input type="text" name="inputRole" class="form-control" id="personRole" />
- </div>
- </div>
- <p>
- <br> <br> <br>
-
- <button type="submit" class="btn btn-primary">Добавить</button>
  <br>
+ <div class="mb-3 row">
+ <label for="lastname"
+ class="col-sm-3 col-form-label">Название района</label>
+ <div class="col-sm-7">
+ <input type="text" class="form-control" id="nameDistrict" name="nameDistrict" />
+ </div>
+ </div>
+ 
+ <div class="mb-3 row">
+<label for="firstname" class="col-sm-3 col-form-label">Площадь</label>
+ <div class="col-sm-7">
+ <input type="text"
+ class="form-control" id="areaDistrict"
+ name="areaDistrict" />
+ </div>
+ </div>
+
+ <div class="mb-3 row">
+ <label for="phone" class="col-sm-3 col-form-label">Год зайстройки</label>
+ <div class="col-sm-7">
+ <input type="text"
+ class="form-control" id="yearDistrict"
+ name="yearDistrict" />
+ </div>
+ </div>
+ 
+ <div class="mb-3 row">
+ <label for="people"
+ class="col-sm-3 col-form-label">Население</label>
+ <div class="col-sm-7">
+ <input type="number" class="form-control" id="peopleDistrict" name="peopleDistrict" />
+ </div>
+ </div>
+ <p> <br>
+ <button type="submit"
+ class="btn btn-primary">Добавить</button>
  </p>
  </form>
+ 
+ 
+ 
+
  </div>
  </div>
  </div>
